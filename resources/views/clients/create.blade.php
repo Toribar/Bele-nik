@@ -10,7 +10,7 @@
                 <div class="panel-body">
                     {{ Form::open(['url' => route('clients.store'), 'method' => 'post', 'class' => 'form-horizontal']) }}
                         <div class="form-group {{ $errors->has('serial') ? 'has-error' : null }}">
-                            <label class="col-md-3 control-label">Redni broj</label>
+                            <label class="col-md-3 control-label">Redni broj:</label>
 
                             <div class="col-md-6">
                                 {{ Form::number('serial', null, ['class' => 'form-control']) }}
@@ -22,7 +22,7 @@
                         </div>
 
                         <div class="form-group {{ $errors->has('created_on') ? 'has-error' : null }}">
-                            <label class="col-md-3 control-label">Datum</label>
+                            <label class="col-md-3 control-label">Datum:</label>
 
                             <div class="col-md-6">
                                 {{ Form::date('created_on', null, ['class' => 'form-control']) }}
@@ -34,10 +34,10 @@
                         </div>
 
                         <div class="form-group {{ $errors->has('info') ? 'has-error' : null }}">
-                            <label class="col-md-3 control-label">Podaci o stranci</label>
+                            <label class="col-md-3 control-label">Podaci o stranci:</label>
 
                             <div class="col-md-6">
-                                {{ Form::textarea('info', null, ['class' => 'form-control']) }}
+                                {{ Form::textarea('info', null, ['class' => 'form-control', 'rows' => '3']) }}
 
                                 @if ($errors->has('info'))
                                     <span class="help-block">{{ $errors->first('info') }}</span>
@@ -46,7 +46,7 @@
                         </div>
 
                         <div class="form-group {{ $errors->has('public_book') ? 'has-error' : null }}">
-                            <label class="col-md-3 control-label">Sluzbena knjiga</label>
+                            <label class="col-md-3 control-label">Sluzbena knjiga:</label>
 
                             <div class="col-md-6">
                                 {{ Form::text('public_book', null, ['class' => 'form-control']) }}

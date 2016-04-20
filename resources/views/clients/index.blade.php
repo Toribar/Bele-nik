@@ -1,7 +1,22 @@
 @extends('layouts.master')
 
 @section('content')
-    <table class="table table-bordered">
+
+    <div class="page-header">
+        <h3 class="text-center">Zajednicki azbucni imenik</h3>
+    </div>
+    <div class="col-md-3">
+        <div class="panel">
+            <div class="panel-heading">Godina: 2016</div>
+        </div>
+    </div>
+    <form>
+        <div class="col-md-4 pull-right" style="padding-bottom: 20px">
+            <input type="search" name="search" placeholder="pretrazi stranku..." class="form-control col-md-3" autocomplete="off">
+        </div>
+    </form>
+
+    <table class="table table-bordered" >
         <thead>
             <tr>
                 <th class="col-md-1 text-center">Redni Broj</th>

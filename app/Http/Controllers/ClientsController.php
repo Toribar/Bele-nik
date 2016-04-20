@@ -14,9 +14,17 @@ class ClientsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $clients = Client::orderBy('serial')->paginate(5);
+        $query = Client::orderBy('serial');
+
+        if ($request->search) {
+            $query->where('serial', 'like', "%{$request->search}%")
+            ->orWhere('info', 'like', "%{$request->search}%")
+            ->orWhere('public_book', 'like', "%{$request->search}%");
+        }
+
+        $clients = $query->paginate();
 
         return view('clients.index', compact('clients'));
     }
