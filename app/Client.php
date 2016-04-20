@@ -13,7 +13,7 @@ class Client extends Model
      * @var array
     */
     protected $fillable = [
-        'serial', 'info', 'public_book',
+        'serial', 'info', 'public_book', 'created_on'
     ];
     /**
     * The attributes that should be mutated to dates.

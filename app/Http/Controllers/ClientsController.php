@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Client;
 use App\Http\Requests;
 use App\Http\Requests\CreateClientRequest;
+use DB;
 
 class ClientsController extends Controller
 {
@@ -37,7 +38,10 @@ class ClientsController extends Controller
      */
     public function create()
     {
-        return view('clients.create');
+        $serial = DB::table('clients')->max('serial');
+        $nextSerial = $serial + 1;
+
+        return view('clients.create', compact('nextSerial'));
     }
 
     /**
