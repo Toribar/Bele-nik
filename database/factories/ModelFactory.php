@@ -20,3 +20,11 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(App\Client::class, function (Faker\Generator $faker) {
+    return [
+        'serial' => $faker->numberBetween(1, 200),
+        // 'created_on' => $faker->$faker->dateTimeThisYear('+6 months')->format('d.m.Y'),
+        'info' => $faker->sentence,
+        'public_book' => $faker->company,
+    ];
+});
