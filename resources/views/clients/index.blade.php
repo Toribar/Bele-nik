@@ -12,7 +12,7 @@
     </div>
     <form>
         <div class="col-md-4 pull-right" style="padding-bottom: 20px">
-            <input type="search" name="search" placeholder="pretrazi stranku..." class="form-control col-md-3" autocomplete="off">
+            <input type="search" name="search" value="{{ Request::get('search') }}" placeholder="Pretraga..." class="form-control col-md-3" autocomplete="off">
         </div>
     </form>
 
