@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="page-header">
-        <h3 class="text-center">Zajednicki azbucni imenik</h3>
+        <h3 class="text-center">Zajednički azbučni imenik</h3>
     </div>
     <div class="col-md-3">
         <div class="panel">
@@ -22,7 +22,7 @@
                 <th class="col-md-1 text-center">Redni Broj</th>
                 <th class="col-md-2 text-center">Datum</th>
                 <th class="col-md-5 text-center">Podaci o stranci</th>
-                <th class="col-md-4 text-center">Sluzbena knjiga u koju je stranka upisana</th>
+                <th class="col-md-4 text-center">Službena knjiga u koju je stranka upisana</th>
             </tr>
         </thead>
 

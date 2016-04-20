@@ -25,7 +25,7 @@
                             <label class="col-md-3 control-label">Datum:</label>
 
                             <div class="col-md-6">
-                                {{ Form::date('created_on', null, ['class' => 'form-control']) }}
+                                {{ Form::text('created_on', date('d.m.Y'), ['class' => 'form-control', 'pikaday']) }}
 
                                 @if ($errors->has('created_on'))
                                     <span class="help-block">{{ $errors->first('created_on') }}</span>

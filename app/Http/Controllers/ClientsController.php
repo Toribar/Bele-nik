@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Client;
 use App\Http\Requests;
+use App\Http\Requests\CreateClientRequest;
 
 class ClientsController extends Controller
 {
@@ -45,7 +46,7 @@ class ClientsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateClientRequest $request)
     {
         Client::create($request->all());
 

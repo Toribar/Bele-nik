@@ -4,11 +4,9 @@ namespace App;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Client extends Model
 {
-    use SoftDeletes;
     /**
      * The attributes that are mass assignable.
      *
@@ -24,5 +22,9 @@ class Client extends Model
     */
     protected $dates = ['created_on'];
 
+    public function setCreatedOnAttribute($value)
+    {
+        $this->attributes['created_on'] = $value ? Carbon::parse($value) : null;
+    }
 
 }
