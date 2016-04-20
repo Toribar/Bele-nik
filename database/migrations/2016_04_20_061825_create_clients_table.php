@@ -19,6 +19,7 @@ class CreateClientsTable extends Migration
             $table->text('info');
             $table->string('public_book')->index();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
