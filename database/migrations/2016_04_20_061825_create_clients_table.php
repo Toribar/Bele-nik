@@ -14,7 +14,7 @@ class CreateClientsTable extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('serial')->index();
+            $table->string('serial')->unique()->index();
              $table->date('created_on');
             $table->text('info');
             $table->string('public_book')->index();
