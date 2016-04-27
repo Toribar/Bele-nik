@@ -38,10 +38,7 @@ class ClientsController extends Controller
      */
     public function create()
     {
-        $serial = DB::table('clients')->max('serial');
-        $nextSerial = $serial + 1;
-
-        return view('clients.create', compact('nextSerial'));
+        return view('clients.create');
     }
 
     /**
