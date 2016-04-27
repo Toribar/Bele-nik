@@ -19,8 +19,7 @@
     <table class="table table-bordered" >
         <thead>
             <tr>
-                <th class="col-md-1 text-center">Redni Broj</th>
-                <th class="col-md-2 text-center">Datum</th>
+                <th class="col-md-3 text-center">Datum</th>
                 <th class="col-md-5 text-center">Podaci o stranci</th>
                 <th class="col-md-4 text-center">Službena knjiga u koju je stranka upisana</th>
             </tr>
@@ -29,7 +28,6 @@
         <tbody>
             @foreach ($clients as $client)
                 <tr>
-                    <td class="text-center">{{ $client->serial }}</td>
                     <td class="text-center">{{ $client->created_on->format('d.m.Y') }}</td>
                     <td class="text-center">{{ $client->info }}</td>
                     <td class="text-center">{{ $client->public_book }}</td>

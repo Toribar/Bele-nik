@@ -9,17 +9,6 @@
 
                 <div class="panel-body">
                     {{ Form::open(['url' => route('clients.store'), 'method' => 'post', 'class' => 'form-horizontal']) }}
-                        <div class="form-group {{ $errors->has('serial') ? 'has-error' : null }}">
-                            <label class="col-md-3 control-label">Redni broj:</label>
-
-                            <div class="col-md-6">
-                                {{ Form::number('serial', $nextSerial, ['class' => 'form-control']) }}
-
-                                @if ($errors->has('serial'))
-                                    <span class="help-block">{{ $errors->first('serial') }}</span>
-                                @endif
-                            </div>
-                        </div>
 
                         <div class="form-group {{ $errors->has('created_on') ? 'has-error' : null }}">
                             <label class="col-md-3 control-label">Datum:</label>
