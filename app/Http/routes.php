@@ -12,9 +12,7 @@
 */
 Route::auth();
 
-Route::get('/', function () {
-    return redirect()->route('clients.index');
-});
+Route::get('/', 'ClientsController@index');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('clients', 'ClientsController');
