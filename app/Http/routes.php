@@ -10,11 +10,10 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+
 Route::auth();
 
-Route::get('/', 'ClientsController@index');
-
 Route::group(['middleware' => 'auth'], function () {
+    Route::get('/', 'ClientsController@index');
     Route::resource('clients', 'ClientsController');
 });
-
