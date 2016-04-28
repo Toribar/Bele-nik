@@ -13,7 +13,7 @@ class Client extends Model
      * @var array
     */
     protected $fillable = [
-        'serial', 'info', 'public_book', 'created_on'
+        'info', 'public_book', 'created_on'
     ];
     /**
     * The attributes that should be mutated to dates.
@@ -21,6 +21,11 @@ class Client extends Model
     * @var array
     */
     protected $dates = ['created_on'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
     public function setCreatedOnAttribute($value)
     {

@@ -24,7 +24,6 @@ class CreateClientRequest extends Request
     public function rules()
     {
         return [
-            'serial' => 'required|unique:clients',
             'created_on' => 'required',
             'info' => 'required',
             'public_book' => 'required',
