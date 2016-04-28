@@ -22,6 +22,11 @@ class Client extends Model
     */
     protected $dates = ['created_on'];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public function setCreatedOnAttribute($value)
     {
         $this->attributes['created_on'] = $value ? Carbon::parse($value) : null;

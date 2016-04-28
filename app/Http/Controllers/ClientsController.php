@@ -5,9 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Client;
+use App\User;
+use Auth;
 use App\Http\Requests;
 use App\Http\Requests\CreateClientRequest;
-use DB;
 
 class ClientsController extends Controller
 {
@@ -18,7 +19,7 @@ class ClientsController extends Controller
      */
     public function index(Request $request)
     {
-        $query = Client::orderBy('serial');
+        $query = Client::orderBy('created_on');
 
         if ($request->search) {
             $query->where('serial', 'like', "%{$request->search}%")
@@ -49,7 +50,9 @@ class ClientsController extends Controller
      */
     public function store(CreateClientRequest $request)
     {
-        Client::create($request->all());
+        $client = new Client($request->all());
+
+        Auth::user()->clients()->save($client);
 
         return redirect()->route('clients.index');
     }
