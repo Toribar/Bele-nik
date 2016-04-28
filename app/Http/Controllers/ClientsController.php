@@ -22,8 +22,7 @@ class ClientsController extends Controller
         $query = Client::orderBy('created_on');
 
         if ($request->search) {
-            $query->where('serial', 'like', "%{$request->search}%")
-            ->orWhere('info', 'like', "%{$request->search}%")
+            $query->where('info', 'like', "%{$request->search}%")
             ->orWhere('public_book', 'like', "%{$request->search}%");
         }
 
