@@ -4,7 +4,8 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h4 class="text-center">Dodaj stranku</h4>
+                    <h4 style="display: inline;">Dodaj stranku</h4>
+                    <button class="btn btn-xs pull-right" style="background-color: #64DD17;" id="scanner">Skeniraj podatke</button>
                 </div>
 
                 <div class="panel-body">
@@ -26,7 +27,7 @@
                             <label class="col-md-3 control-label">Podaci o stranci:</label>
 
                             <div class="col-md-6">
-                                {{ Form::textarea('info', null, ['class' => 'form-control', 'rows' => '3']) }}
+                                {{ Form::textarea('info', null, ['class' => 'form-control client-info', 'rows' => '3']) }}
 
                                 @if ($errors->has('info'))
                                     <span class="help-block">{{ $errors->first('info') }}</span>
@@ -38,7 +39,7 @@
                             <label class="col-md-3 control-label">Sluzbena knjiga:</label>
 
                             <div class="col-md-6">
-                                {{ Form::text('public_book', null, ['class' => 'form-control']) }}
+                                {{ Form::text('public_book', null, ['class' => 'form-control public-book']) }}
 
                                 @if ($errors->has('public_book'))
                                     <span class="help-block">{{ $errors->first('public_book') }}</span>
