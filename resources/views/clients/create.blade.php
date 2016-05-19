@@ -5,7 +5,8 @@
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h4 style="display: inline;">Dodaj stranku</h4>
-                    <button class="btn btn-xs pull-right" style="background-color: #64DD17;" id="scanner">Skeniraj podatke</button>
+                    <button class="btn btn-xs pull-right" style="background-color: #00E676; color:
+                    #004D40" id="scanner">Skeniraj podatke</button>
                 </div>
 
                 <div class="panel-body">
