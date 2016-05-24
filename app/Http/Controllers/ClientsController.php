@@ -76,7 +76,7 @@ class ClientsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateClientRequest $request, $id)
     {
         Client::findOrFail($id)->update($request->all());
 
@@ -91,7 +91,7 @@ class ClientsController extends Controller
      */
     public function destroy($id)
     {
-        Client::findOrFail($id)->delete($request->all());
+        Client::findOrFail($id)->delete();
 
         return redirect()->route('clients.index');
     }

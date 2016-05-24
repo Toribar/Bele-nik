@@ -22,6 +22,7 @@
                 <th class="col-md-3 text-center">Datum</th>
                 <th class="col-md-5 text-center">Podaci o stranci</th>
                 <th class="col-md-4 text-center">Službena knjiga u koju je stranka upisana</th>
+                <th width="1%"></th>
             </tr>
         </thead>
 
@@ -31,6 +32,9 @@
                     <td class="text-center">{{ $client->created_on->format('d.m.Y') }}</td>
                     <td class="text-center">{{ $client->info }}</td>
                     <td class="text-center">{{ $client->public_book }}</td>
+                    <td>
+                        <a href="{{ route('clients.edit', $client->id) }}">Izmeni</a>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

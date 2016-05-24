@@ -2,7 +2,7 @@
     <label class="col-md-3 control-label">Datum:</label>
 
     <div class="col-md-6">
-        {{ Form::text('created_on', date('d.m.Y'), ['class' => 'form-control', 'id' => 'pikaday']) }}
+        {{ Form::text('created_on', isset($client) ? $client->created_on->format('d.m.Y') : date('d.m.Y'), ['class' => 'form-control', 'id' => 'pikaday']) }}
 
         @if ($errors->has('created_on'))
             <span class="help-block">{{ $errors->first('created_on') }}</span>
@@ -34,16 +34,12 @@
     </div>
 </div>
 
-<div class="form-group">
-    <div class="col-md-6 col-md-offset-3">
-        <div class="row">
-            <div class="col-xs-6">
-                <button type="submit" class="btn btn-primary btn-block">Sačuvaj</button>
-            </div>
+<div class="row">
+    <div class="col-xs-3 col-md-offset-3">
+        <button type="submit" class="btn btn-primary btn-block">Sačuvaj</button>
+    </div>
 
-            <div class="col-xs-6">
-                <a href="{{ route('clients.index') }}" class="btn btn-default btn-block">Odustani</a>
-            </div>
-        </div>
+    <div class="col-xs-3">
+        <a href="{{ route('clients.index') }}" class="btn btn-default btn-block">Odustani</a>
     </div>
 </div>
