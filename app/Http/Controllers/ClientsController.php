@@ -57,17 +57,6 @@ class ClientsController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -75,7 +64,9 @@ class ClientsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $client = Client::findOrFail($id);
+
+        return view('clients.edit', compact('client'));
     }
 
     /**
@@ -87,7 +78,9 @@ class ClientsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Client::findOrFail($id)->update($request->all());
+
+        return redirect()->route('clients.index');
     }
 
     /**
@@ -98,6 +91,8 @@ class ClientsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Client::findOrFail($id)->delete($request->all());
+
+        return redirect()->route('clients.index');
     }
 }
